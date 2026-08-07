@@ -1,0 +1,27 @@
+cask "notely" do
+  version "0.1.6"
+  sha256 "45dc16cef3fdae651257ab83e874b83829675a772d393cf3ed1562bb267199b7"
+
+  url "https://github.com/ale24dev/notely/releases/download/v#{version}/Notely_#{version}_universal.dmg"
+  name "Notely"
+  desc "Gestor de notas en Markdown para el menu bar de macOS"
+  homepage "https://github.com/ale24dev/notely"
+
+  # Coincide con minimumSystemVersion de src-tauri/tauri.conf.json.
+  depends_on macos: ">= :catalina"
+
+  app "Notely.app"
+
+  # Deja que `brew livecheck` detecte versiones nuevas por los tags de
+  # GitHub Releases, para poder automatizar el bump del Cask más adelante.
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
+  zap trash: [
+    "~/Library/Application Support/com.24notely.app",
+    "~/Library/Preferences/com.24notely.app.plist",
+    "~/Library/Saved Application State/com.24notely.app.savedState",
+  ]
+end
