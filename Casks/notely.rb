@@ -1,6 +1,6 @@
 cask "notely" do
-  version "0.1.6"
-  sha256 "45dc16cef3fdae651257ab83e874b83829675a772d393cf3ed1562bb267199b7"
+  version "0.1.8"
+  sha256 "d6e8aeadfb9c15980d8f2a9fcb2375ff2f5c1780cc4817ef0572c8a3e5853a73"
 
   url "https://github.com/ale24dev/notely/releases/download/v#{version}/Notely_#{version}_universal.dmg"
   name "Notely"
